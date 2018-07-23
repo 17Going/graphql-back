@@ -24,10 +24,17 @@ module.exports = appInfo => {
   };
 
   config.security = {
+    // domainWhiteList: [ 'http://localhost:8080' ],
     csrf: {
       ignore: () => true,
     },
   }
+
+  config.cors = {
+    origin: '*',
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
+    credentials: true
+  };
 
   // add your config here
   config.middleware = ['graphql'];
