@@ -1,0 +1,7 @@
+
+
+type Mutation {
+
+  # user
+  createUser(name: String!, name_dd: String): User
+}

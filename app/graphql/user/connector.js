@@ -16,7 +16,6 @@ class UserConnector {
         },
       },
     }).then(us => us.map(u => u.toJSON()));
-    
     return users;
   }
 
@@ -26,6 +25,14 @@ class UserConnector {
 
   fetchById(id) {
     return this.loader.load(id);
+  }
+
+  add(name, name_dd){
+    const user = this.ctx.app.model.User.create({
+      name,
+      name_dd
+    });
+    return user;
   }
 }
 
